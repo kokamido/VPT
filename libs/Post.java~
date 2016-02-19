@@ -1,0 +1,10 @@
+package VPT.notCore;
+import java.util.concurrent.ConcurrentLinkedQueue;
+
+public class HereIAm{
+	
+	public interface MailBox{
+		public void getMessage(HashMap<String,sas> message);/*!!!*/
+}
+
+}

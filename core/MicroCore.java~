@@ -1,0 +1,27 @@
+package VPT.core;
+
+import VPT.notCore.*;
+import java.util.*;
+
+public class MicroCore implements Runnable{
+
+	HashMap<Integer,HereIAm.MailBox> systemComponents = new HashMap<Integer, HereIAm.MailBox>();
+		
+
+	class coreBox implements HereIAm.MailBox{
+		/*!!!*/ void getMessage()
+	} 
+
+	public void SendMessage(String id, HashMap<String,String[]> args){
+		systemComponents.get(id).getMessage(args);
+	}
+
+	private void RegsterSystemComp(HereIAm.MailBox box){
+		systemComponents.put(systemComponents.size(), box);
+	}
+
+	private void UnregisterSystemComp(Integer id){
+		systemComponents.remove(id);
+	}
+
+} 
