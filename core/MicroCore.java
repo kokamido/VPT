@@ -1,9 +1,9 @@
 package VPT.core;
 
-import VPT.libs.*;						/*импортирую определённые мною классы, чтобы была возможность писать сообщения*/
-import VPT.libs.Message.*;				/*согласно спецификациям*/
-import java.util.concurrent.ConcurrentLinkedQueue;  /*стандартная очередь, вроде как хорошо дружит с потоками*/
-import java.util.HashMap;							/*стандартный хэшмэп*/
+import VPT.libs.*;						
+import VPT.libs.Message.*;				
+import java.util.concurrent.ConcurrentLinkedQueue;  
+import java.util.HashMap;							
 
 
 public class MicroCore implements Runnable, Core, MailBox{
@@ -16,7 +16,7 @@ public class MicroCore implements Runnable, Core, MailBox{
 
 	/**
 	*
-	*{@literal} Constructor, also registers core.
+	*{@literal} Constructor, it also registers core.
 	*/
 	public MicroCore(){																			
 		regsterSystemComp(this);																
@@ -71,12 +71,19 @@ public class MicroCore implements Runnable, Core, MailBox{
 		messageQueue.offer(message);
 	}
 
-	/*регистрируем модуль*/
+
+	/**
+	*
+	*{@literal} Registers system components.
+	*/
 	private void regsterSystemComp(MailBox box){												
 		systemComponents.put(systemComponents.size(), box);
 	}
 
-	/*удаляем модуль*/
+	/**
+	*
+	*{@literal} Deletes system components.
+	*/
 	private void unregisterSystemComp(Integer id){												
 		systemComponents.remove(id);
 	}

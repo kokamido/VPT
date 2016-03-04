@@ -1,1 +1,2 @@
-java -cp /home/andrey/Desktop/kek VPT.Init
+cd ..
+java VPT.Init

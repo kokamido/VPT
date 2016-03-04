@@ -1,6 +1,8 @@
 package VPT.libs;
-import java.util.concurrent.ConcurrentLinkedQueue; //стандартная очередь
-import java.util.HashMap;//стандартный хэшмэп
+
+import java.util.concurrent.ConcurrentLinkedQueue;
+import java.util.HashMap;
+import VPT.libs.Action;
 
 public class Message{
 	
@@ -23,64 +25,6 @@ public class Message{
 		public void sendMessage(Message message);
 	}
 
-	/**
-	*
-	*{@literal} Structural unit of the message
-	*/
-	public class Action{
-		
-		String funcName = "";
-		HashMap<String,Object> args = new HashMap<String,Object>();
-
-		Action(){};
-		
-		/**
-		*
-		*@param funcName - Name of called function
-		*/
-		public Action(String funcName){
-			this.funcName = funcName;
-		}
-		
-		/**
-		*
-		*@param funcName Name of called function
-		*@param args HashMap contains names and values of arguments
-		*/
-		public Action(String funcName, HashMap<String,Object> args){
-			this.funcName = funcName;
-			this.args = args;
-		}
-		
-		/**
-		*
-		*@param args a sequence of arguments names and their values, in the order of name, value, name, value, etc.
-		*/
-		public Action(Object... args){
-			this.funcName = (String)args[0];
-			for(int i = 1; i<args.length; doubleInc(i)){
-				addArg((String)args[i],args[i+1]);
-			}
-		}
-		
-		/**
-		*
-		*{@literal} Adds new argument into Action
-		*/
-		public void addArg(String argName, Object argValue){
-			this.args.put(argName, argValue);
-		}
-		
-		public String getFuncName(){
-			return funcName;
-		}
-		
-		public HashMap<String,Object> getArgs(){
-			return args;
-		}
-		
-		private int doubleInc(int i) {return (i+2);}
-	}	
 
 	public Message(){};
 	/*TODO Конструктор с переменным количеством аргуменов*/
@@ -127,9 +71,6 @@ public class Message{
 		return actions;
 	}
 
-	public Action newAction(String funcName, HashMap<String,Object> args){  
-		return new Action(funcName, args);										
-	}
 }
 	
 

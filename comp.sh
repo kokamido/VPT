@@ -1,14 +1,19 @@
-cd libs
-javac Message.java
-javadoc -d html Message.java
 cd ..
-cd core
-javac -cp /home/andrey/Desktop/kek MicroCore.java
-javadoc -d html MicroCore.java
-cd ..
-cd inventory
-javac -cp /home/andrey/Desktop/kek Inventory.java
-javadoc -d html Inventory.java
-cd ..
-javac -cp /home/andrey/Desktop/kek Init.java
-cd ..
+javac VPT/libs/Action.java
+javac VPT/libs/Message.java
+javac VPT/libs/Orientation.java
+javac VPT/libs/Picture.java
+javac VPT/libs/Point.java
+javac VPT/libs/Form.java
+javac VPT/libs/IDcreator.java
+javac VPT/gameObjects/GameObject.java
+javac VPT/gameObjects/CardType.java
+javac VPT/gameObjects/Card.java
+javac VPT/gameObjects/Container.java
+javac VPT/gameObjects/Deck.java
+javac VPT/gameObjects/Heap.java
+javac VPT/core/MicroCore.java
+javac VPT/inventory/Inventory.java
+javac VPT/tests/CoreTest.java
+javac VPT/Init.java
+ 

@@ -3,20 +3,18 @@ package VPT;
 import VPT.core.*;
 import VPT.inventory.*;
 import VPT.libs.Message.*;
-
+import VPT.tests.*;
+import VPT.libs.*;
 
 /*Здесь стартует вся программа*/
 public class Init{
 	static MicroCore corre = new MicroCore();       /*Создаю экземпляр ядра*/
+	static CoreTest cTest = new CoreTest(corre);	/*Тест*/
 	public static void main(String[] args){
 		System.out.println("Я родился!");
+		Point kek = new Point();
 		Thread coreThread = new Thread(corre);		/*создаю поток, чтобы обрабатывать поступающие в ядро сообщения*/
 		coreThread.start();							/*стартую поток*/
-		Inventory kek = new Inventory(corre);		/*создаю экземпляр инвентаря(пока просто большая заглушка)*/
-		kek.test();									/*вызываю методы инвентаря, чтобы пртустировать как все работает*/
-		kek.test1();  
+		cTest.go();
 	}
-	/*В луа можно передавать ссылку на GameObject  и пусть оно себе тягает данные*/
-	/*конкретные днные можно в jsonах*/
-	/*формат сценария*/
 }
