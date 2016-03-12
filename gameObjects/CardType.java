@@ -1,14 +1,14 @@
 package VPT.gameObjects;
 
 import VPT.libs.Point;
-import VPT.libs.Form;
+import VPT.libs.Shape;
 import VPT.libs.Orientation;
 import VPT.libs.Picture;
 
 
 public class CardType{
 	private int id;
-	private Form form;
+	private Shape shape;
 	private int numOfStates;
 	private int backIndex;
 	private Picture[] pictures;
@@ -26,10 +26,10 @@ public class CardType{
 	*@param orients Orientations of the card.
 	*@param isClasterable Flag allowing grouping cards in a container.
 	*/
-	public CardType(int id, Form form, int numOfStates, int backIndex, Picture[] pictures,
+	public CardType(int id, Shape shape, int numOfStates, int backIndex, Picture[] pictures,
 		int orientNum, Orientation[] orients, boolean isClasterable){
 		this.id = id;
-		this.form = form;
+		this.shape = shape;
 		this.numOfStates = numOfStates;
 		this.backIndex = backIndex;
 		this.pictures = pictures;
@@ -40,12 +40,12 @@ public class CardType{
 
 	/**
 	*
-	*{@literal} Applyes the orientation number "num" from orients.
+	*{@literal} Returns the shape with orientation number "num" from orients.
 	*@param num Number of applying orientation.
 	*@see CardType#orients orients.
 	*/
-	public void applyOrientation(int num){
-		form.rotation(orients[num]);
+	public Shape applyOrientation(int num){
+		return shape.rotation(orients[num]);
 	}
 
 	/**
@@ -62,8 +62,8 @@ public class CardType{
 	*{@literal} Returns the form of this card type.
 	*@see CardType#form form
 	*/
-	public Form getForm(){
-		return (Form)form.clone();
+	public Shape getShape(){
+		return (Shape)shape.clone();
 	}
 	
 	/**

@@ -1,10 +1,10 @@
 package VPT.gameObjects;
 
-import VPT.libs.Form;
+import VPT.libs.Shape;
 import VPT.libs.Orientation;
 import VPT.libs.Picture;
 import VPT.libs.Point;
-//import VPT.gameObjects.CardType;
+import VPT.gameObjects.CardType;
 import java.util.HashMap;
 import java.util.HashSet;
 
@@ -12,7 +12,7 @@ public class Container implements GameObject{
 		
 	private int containerID;
 	private int parentID;
-	private Form form;
+	private Shape shape;
 	//<привязка к форме родителя>
 	private Orientation orientationFromParent;
 	private Point shiftFromParent;
@@ -26,13 +26,13 @@ public class Container implements GameObject{
 	private HashMap<CardType, Picture> defaultNotOwnerVision;
 	private HashSet<Integer> childObjects;
 
-	public Container(int containerID, int parentID, Form form, Orientation orientationFromParent,
+	public Container(int containerID, int parentID, Shape shape, Orientation orientationFromParent,
 		Point shiftFromParent, boolean canMove, Picture picture, boolean isStatic, int ownerID,
 		HashSet<CardType> permittedTypes, HashMap<CardType, Picture> defaultOwnerVision,
 		HashMap<CardType, Picture> defaultNotOwnerVision, HashSet<Integer> childObjects){
 		this.containerID = containerID;
 		this.parentID = parentID;
-		this.form = form;
+		this.shape = shape;
 		this.orientationFromParent = orientationFromParent;
 		this.shiftFromParent = shiftFromParent;
 		this.canMove = canMove;
@@ -55,8 +55,8 @@ public class Container implements GameObject{
 		return parentID;
 	}
 
-	public Form getForm(){
-		return form.clone();
+	public Shape getShape(){
+		return shape.clone();
 	}
 
 	public Orientation getOrientationFromParent(){

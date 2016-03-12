@@ -1,3 +1,4 @@
+package VPT.libs;
 public class IDcreator{
 	private IDcreator(){}
 

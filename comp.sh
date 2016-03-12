@@ -1,10 +1,13 @@
 cd ..
+javac VPT/libs/IBasicAction.java
+javac VPT/libs/Script.java
+javac VPT/libs/ScriptAction.java
 javac VPT/libs/Action.java
 javac VPT/libs/Message.java
 javac VPT/libs/Orientation.java
 javac VPT/libs/Picture.java
 javac VPT/libs/Point.java
-javac VPT/libs/Form.java
+javac VPT/libs/Shape.java
 javac VPT/libs/IDcreator.java
 javac VPT/gameObjects/GameObject.java
 javac VPT/gameObjects/CardType.java
@@ -13,6 +16,7 @@ javac VPT/gameObjects/Container.java
 javac VPT/gameObjects/Deck.java
 javac VPT/gameObjects/Heap.java
 javac VPT/core/MicroCore.java
+javac VPT/inventory/Layout.java
 javac VPT/inventory/Inventory.java
 javac VPT/tests/CoreTest.java
 javac VPT/Init.java

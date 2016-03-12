@@ -9,19 +9,19 @@ import java.util.HashMap;
 public class CoreTest{
 
 	Core core;
-	Inventory inv;
+	Layout inv;
 	public CoreTest(Core core){
 		this.core = core;
 	}
 
 	public void go(){
-		createInventory();
+		createLayout();
 		inventoryRegister();
 		callingInventoryFuncWithCore();
 	}
 
-	public void createInventory(){
-		inv = new Inventory(core);
+	public void createLayout(){
+		inv = new Layout(core);
 	}
 
 	public void inventoryRegister(){													/*собираю сообщение чтобы зарегистрироваться в ядре*/

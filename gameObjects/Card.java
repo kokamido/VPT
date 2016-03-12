@@ -1,26 +1,25 @@
 package VPT.gameObjects;
 
 
-//ДЕЙСТВИЯ
-
 import java.util.Hashtable;
 import java.util.Iterator;
 import java.util.HashSet;
 import VPT.libs.Point;
-import VPT.libs.Form;
+import VPT.libs.Shape;
 import VPT.libs.Orientation;
 import VPT.libs.Picture;
-//import VPT.gameObjects.CardType;
+import VPT.gameObjects.CardType;
+import VPT.gameObjects.GameObject;
 
 /**
 *
 *
 */
-public class Card{
+public class Card implements GameObject{
 	private int cardID;
 	private int typeID;
 	private String subtypeID;
-	private boolean isTransferred = false;//being
+	private boolean isBeingTransferred = false;
 	private int containerID = -1;
 	private int ownerID = -1;
 	private int currentOrient;
@@ -28,13 +27,13 @@ public class Card{
 	private Hashtable<Integer,Integer> playersVision;
 	private HashSet<Integer> childObjects;
 
-	public Card(int cardID, int typeID, String subtypeID, boolean isTransferred, int containerID, int ownerID,
+	public Card(int cardID, int typeID, String subtypeID, boolean isBeingTransferred, int containerID, int ownerID,
 		int currentOrient, Point shift, Hashtable<Integer,Integer> playersVision, HashSet<Integer> childObjects){
 		this.cardID = cardID;
 		this.typeID = typeID;
 		this.subtypeID = subtypeID;
 		this.containerID = containerID;
-		this.isTransferred = isTransferred;
+		this.isBeingTransferred = isBeingTransferred;
 		this.ownerID = ownerID;
 		this.currentOrient = currentOrient;
 		this.shift = shift;
@@ -88,8 +87,8 @@ public class Card{
 	*
 	*{@literal}
 	*/
-	public boolean isTransferred(){
-		return isTransferred;
+	public boolean isBeingTransferred(){
+		return isBeingTransferred;
 	}
 
 	/**
@@ -157,7 +156,7 @@ public class Card{
 	*{@literal}
 	*/
 	public void changeTransferFlag(){
-		isTransferred = !isTransferred;
+		isBeingTransferred = !isBeingTransferred;
 	}
 
 	/**
@@ -165,7 +164,7 @@ public class Card{
 	*{@literal}
 	*/
 	public void setTransferFlag(boolean flag){
-		isTransferred = flag;
+		isBeingTransferred = flag;
 	}
 
 	/**
